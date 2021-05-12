@@ -185,7 +185,7 @@
                                                                            <!-- <Text text="11:30" /> -->
                                                                            <Input enabled="false" type="Time" value="11:30"/>
                                                                            
-                                                                           <Input enabled="false" type="Number" value="1,5" />
+                                                                           <Input enabled="false" type="Number" value="1.5" />
                                                                       </cells>
                                                                  </ColumnListItem>
                                                                  <ColumnListItem>
@@ -196,7 +196,7 @@
                                                                            <!-- <Text text="11:30" /> -->
                                                                         <Input enabled="false" type="Time" value="11:30"/>
                                                                         
-                                                                        <Input enabled="false" type="Number" value="1,5" />
+                                                                        <Input enabled="false" type="Number" value="1.5" />
                                                                       </cells>
                                                                  </ColumnListItem>
                                                             </items>
