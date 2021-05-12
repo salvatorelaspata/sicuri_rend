@@ -1,0 +1,405 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"	xmlns:core="sap.ui.core" controllerName="com.Innovation.ui5Project.controller.View1" xmlns:unified="sap.ui.unified" xmlns:dnd="sap.ui.core.dnd" displayBlock="true">
+
+    <Page showHeader="true" showFooter="false">
+        <customHeader>
+            <Toolbar>
+                <Button type="Back" tooltip="Back" press="onNavBack" />
+                <ToolbarSpacer />
+                <Title text="Rendicontazione OdS" level="H1" />
+                <ToolbarSpacer />
+            </Toolbar>
+        </customHeader>
+        <SplitApp id="app" initialDetail="detail" initialMaster="master">
+            <detailPages>
+                <Page id="detail" title="" backgroundDesign="Solid" class="sapUiStdPage" showHeader="false">
+                    <customHeader>
+                        <Toolbar>
+                            <Title text="" level="H1" />
+                            <ToolbarSpacer />
+                            
+                        </Toolbar>
+                    </customHeader>
+                    <ObjectHeader
+                        id="oh1"
+                        responsive="true"
+                        fullScreenOptimized="true"
+                        binding="{detailModel>}"
+                        icon="sap-icon://eam-work-order"
+                        iconAlt="{Name}"
+                        intro="Sostituzione Scheda"
+                        title="OdS: 20000234"
+                        titleActive="true"
+                        titlePress="handleTitlePress"
+                        numberUnit="{CurrencyCode}"
+                        showMarkers="false"
+                        markFlagged="false"
+                        markFavorite="false"
+                        backgroundDesign="Translucent"
+                        class="sapUiResponsivePadding--header" >
+                        <statuses>
+                            <ObjectStatus
+                                title="RiT"
+                                icon="sap-icon://document"/>
+                                <ObjectStatus
+                                    title="Stato"
+                                    text="Eseguito"
+                                    state="Success"/>
+                        </statuses>
+                        <ObjectAttribute
+                                title="Data"
+                                text="13/05/2021"/>
+                        <ObjectAttribute
+                                title="Divisione"
+                                text="RM01"/>
+                        <ObjectAttribute
+                                title="CdL Rest"
+                                text="DUMMY"/>
+                        <ObjectAttribute
+                                title="Priorità"
+                                text="Urgente"/>
+                        <headerContainer>
+                                <IconTabBar
+                                    id="itb1"
+                                    selectedKey="key3"
+                                    upperCase="true"
+                                    class="sapUiResponsiveContentPadding">
+                                    <items>
+                                        <IconTabFilter
+                                            icon="sap-icon://hint" text="Dettaglio">
+                                            
+                                            <VBox>
+                                                <HBox justifyContent="SpaceAround" alignContent="Stretch">
+                                                <Panel width="120%" accessibleRole="Region">
+                                                    <headerToolbar>
+                                                        <OverflowToolbar>
+                                                            <Title text="Impianto"/>
+                                                        </OverflowToolbar>
+                                                    </headerToolbar>
+                                                    <content>
+                                                        <HBox justifyContent="SpaceBetween">
+                                                            <Label text="Cod. Impianto"/>
+                                                            <Text text="30001234"/>
+                                                        </HBox>
+                                                        <HBox justifyContent="SpaceBetween">
+                                                            <Label text="Stato"/>
+                                                            <Text text="Fuori Esercizio"/>
+                                                        </HBox>
+                                                        <HBox justifyContent="SpaceBetween">
+                                                            <Label text="Descrizione"/>
+                                                            <Text text="Impianto Cube"/>
+                                                        </HBox>
+                                                        <HBox justifyContent="SpaceBetween">
+                                                            <Label text="Indirizzo"/>
+                                                            <Link text="Via Francesco Cangiullo, 24, 00142, Roma RM"/>
+                                                        </HBox>
+                                                        <HBox justifyContent="SpaceBetween">
+                                                            <Label text=""/>
+                                                            <Link text=""/>
+                                                        </HBox>
+                                                    </content>
+                                                </Panel>
+                                                <Panel width="120%" class="aasdasdasdasdasdas" accessibleRole="Region">
+                                                    <headerToolbar>
+                                                        <OverflowToolbar>
+                                                            <Title text="Cliente"/>
+                                                        </OverflowToolbar>
+                                                    </headerToolbar>
+                                                    <content>
+                                                        <HBox justifyContent="SpaceBetween">
+                                                            <Label text="Cod. Cliente"/>
+                                                            <Text text="30001234"/>
+                                                        </HBox>
+                                                        <HBox justifyContent="SpaceBetween">
+                                                            <Label text=""/>
+                                                            <Text text="Cube Consultants"/>
+                                                        </HBox>
+                                                        <HBox justifyContent="SpaceBetween">
+                                                            <Label text="Contatto"/>
+                                                            <Text text="Alessandro Chessa"/>
+                                                        </HBox>
+                                                        <HBox justifyContent="SpaceBetween">
+                                                            <Label text="email"/>
+                                                            <Link text="alessandro.chessa@cubemail.it"/>
+                                                        </HBox>
+                                                        
+                                                        <HBox justifyContent="SpaceBetween">
+                                                            <Label text="Telefono"/>
+                                                            <Link text="+39 333 123456C"/>
+                                                        </HBox>
+                                                    </content>
+                                                </Panel>
+                                                </HBox>
+                                                <Panel width="auto" class="" accessibleRole="Region">
+                                                    <headerToolbar>
+                                                        <OverflowToolbar>
+                                                            <Title text="Ore Manodopera"/>
+                                                        </OverflowToolbar>
+                                                    </headerToolbar>
+                                                    <content>
+                                                        <Table mode="SingleSelectLeft">
+                                                            <headerToolbar>
+                                                                 <OverflowToolbar>
+                                                                      <content>
+                                                                           <Title text="" level="H2"/>
+                                                                           <ToolbarSpacer />
+                                                                           <Button text="Aggiungi" icon="sap-icon://add" class="sapUiSmallMarginBegin"/>
+                                                                           <Button text="Cancella" icon="sap-icon://delete" class="sapUiSmallMarginBegin"/>
+                                                                            <Button text="Modifica" icon="sap-icon://edit" class="sapUiSmallMarginBegin"/>
+                                                                            <Button text="Esporta" icon="sap-icon://excel-attachment" class="sapUiSmallMarginBegin"/>
+                                                                        </content>
+                                                                 </OverflowToolbar>
+                                                            </headerToolbar>
+                                                            <infoToolbar/>
+                                                            <columns>
+                                                                 <Column>
+                                                                      <Text text="CID" />
+                                                                 </Column>
+                                                                 <Column
+                                                                      minScreenWidth="Desktop"
+                                                                      demandPopin="true">
+                                                                      <Text text="Qualifica" />
+                                                                 </Column>
+                                                                 <Column
+                                                                      minScreenWidth="Desktop"
+                                                                      demandPopin="true" hAlign="Right">
+                                                                      <Text text="Ora Inizio" />
+                                                                 </Column>
+                                                                 <Column
+                                                                      minScreenWidth="Tablet"
+                                                                      demandPopin="true" hAlign="Right">
+                                                                      <Text text="Ora Fine"/>
+                                                                 </Column>
+                                                                 <Column
+                                                                      minScreenWidth="Tablet"
+                                                                      demandPopin="true" hAlign="Right">
+                                                                      <Text text="nr. Ore" />
+                                                                 </Column>
+                                                            </columns>
+                                                            <items>
+                                                                 <ColumnListItem>
+                                                                      <cells>
+                                                                           <ObjectIdentifier text="Mario Rossi" />
+                                                                           <Text text="Tecnico Spec." />
+                                                                           <!-- <Text text="10:00" /> -->
+                                                                           <Input enabled="false" type="Time" value="10:00"/>
+                                                                           <!-- <Text text="11:30" /> -->
+                                                                           <Input enabled="false" type="Time" value="11:30"/>
+                                                                           
+                                                                           <Input enabled="false" type="Number" value="1,5" />
+                                                                      </cells>
+                                                                 </ColumnListItem>
+                                                                 <ColumnListItem>
+                                                                      <cells>
+                                                                        <ObjectIdentifier text="Carlo Verdi" />
+                                                                        <Text text="Tecnico Gen." />
+                                                                        <Input enabled="false" type="Time" value="10:00"/>
+                                                                           <!-- <Text text="11:30" /> -->
+                                                                        <Input enabled="false" type="Time" value="11:30"/>
+                                                                        
+                                                                        <Input enabled="false" type="Number" value="1,5" />
+                                                                      </cells>
+                                                                 </ColumnListItem>
+                                                            </items>
+                                                       </Table>
+                                                    </content>
+                                                </Panel>
+                                                
+                                                <Panel width="auto" class="" accessibleRole="Region">
+                                                    <headerToolbar>
+                                                        <OverflowToolbar>
+                                                            <Title text="Materiali impegnati"/>
+                                                        </OverflowToolbar>
+                                                    </headerToolbar>
+                                                    <content>
+                                                        <Table mode="SingleSelectLeft">
+                                                            <headerToolbar>
+                                                                 <OverflowToolbar>
+                                                                      <content>
+                                                                           <Title text="" level="H2"/>
+                                                                           <ToolbarSpacer />
+                                                                           <Button text="Aggiungi" icon="sap-icon://add" class="sapUiSmallMarginBegin"/>
+                                                                           <Button text="Cancella" icon="sap-icon://delete" class="sapUiSmallMarginBegin"/>
+                                                                            <Button text="Modifica" icon="sap-icon://edit" class="sapUiSmallMarginBegin"/>
+                                                                            <Button text="Esporta" icon="sap-icon://excel-attachment" class="sapUiSmallMarginBegin"/>
+                                                                        </content>
+                                                                 </OverflowToolbar>
+                                                            </headerToolbar>
+                                                            <infoToolbar/>
+                                                            <columns>
+                                                                 <Column>
+                                                                      <Text text="Cod. Materiale" />
+                                                                 </Column>
+                                                                 <Column
+                                                                      minScreenWidth="Desktop"
+                                                                      demandPopin="true">
+                                                                      <Text text="Quantità" />
+                                                                 </Column>
+                                                                 <Column
+                                                                      minScreenWidth="Desktop"
+                                                                      demandPopin="true" width="12rem">
+                                                                      <Text text="Descrizione" />
+                                                                 </Column>
+                                                                 <Column
+                                                                      minScreenWidth="Tablet"
+                                                                      demandPopin="true" hAlign="Right">
+                                                                      <Text text="Nr. Serie"/>
+                                                                 </Column>
+                                                            </columns>
+                                                            <items>
+                                                                 <ColumnListItem>
+                                                                      <cells>
+                                                                           <ObjectIdentifier text="2000123" />
+                                                                           <Input enabled="false" type="Number" value="1" />
+                                                                           <Text text="Scheda" />
+                                                                           <Input enabled="false" type="Text" value="11:amd000123" />
+                                                                      </cells>
+                                                                 </ColumnListItem>
+                                                                 <ColumnListItem>
+                                                                      <cells>
+                                                                        <ObjectIdentifier text="6000012" />                                                                        
+                                                                        <Input enabled="false" type="Number" value="6" />
+                                                                        <Text text="Viti m5" />
+                                                                        <Input enabled="false" type="Text" value="" />
+                                                                      </cells>
+                                                                 </ColumnListItem>
+                                                            </items>
+                                                       </Table>
+                                                    </content>
+                                                </Panel>
+                                                <Panel width="auto" class="" accessibleRole="Region">
+                                                    <headerToolbar>
+                                                        <OverflowToolbar>
+                                                            <Title text="Prestazioni"/>
+                                                        </OverflowToolbar>
+                                                    </headerToolbar>
+                                                    <content>
+                                                        <Table mode="SingleSelectLeft">
+                                                            <headerToolbar>
+                                                                 <OverflowToolbar>
+                                                                      <content>
+                                                                           <Title text="" level="H2"/>
+                                                                           <ToolbarSpacer />
+                                                                           <Button text="Aggiungi" icon="sap-icon://add" class="sapUiSmallMarginBegin"/>
+                                                                           <Button text="Cancella" icon="sap-icon://delete" class="sapUiSmallMarginBegin"/>
+                                                                            <Button text="Modifica" icon="sap-icon://edit" class="sapUiSmallMarginBegin"/>
+                                                                            <Button text="Esporta" icon="sap-icon://excel-attachment" class="sapUiSmallMarginBegin"/>
+                                                                        </content>
+                                                                 </OverflowToolbar>
+                                                            </headerToolbar>
+                                                            <infoToolbar/>
+                                                            <columns>
+                                                                 <Column>
+                                                                      <Text text="CID" />
+                                                                 </Column>
+                                                                 <Column
+                                                                      minScreenWidth="Desktop"
+                                                                      demandPopin="true">
+                                                                      <Text text="Cod. Prestazione" />
+                                                                 </Column>
+                                                                 <Column
+                                                                      minScreenWidth="Desktop"
+                                                                      demandPopin="true" hAlign="Right">
+                                                                      <Text text="Quantità" />
+                                                                 </Column>
+                                                                 <Column
+                                                                      minScreenWidth="Tablet"
+                                                                      demandPopin="true">
+                                                                      <Text text="UdM"/>
+                                                                 </Column>
+                                                                 <Column
+                                                                      minScreenWidth="Tablet"
+                                                                      demandPopin="true">
+                                                                      <Text text="Descrizione" />
+                                                                 </Column>
+                                                                 <Column
+                                                                    minScreenWidth="Tablet"
+                                                                    demandPopin="true" hAlign="Right">
+                                                                    <Text text="Valore Unitario" />
+                                                                </Column>
+                                                                <Column
+                                                                   minScreenWidth="Tablet"
+                                                                   demandPopin="true" hAlign="Right">
+                                                                   <Text text="Valore Tot" />
+                                                               </Column>
+                                                            </columns>
+                                                            <items>
+                                                                 <ColumnListItem>
+                                                                      <cells>
+                                                                           <ObjectIdentifier text="P00012" />
+                                                                           <Input enabled="false" type="Number" value="2" />
+                                                                           <Text text="un" />
+                                                                           <Text text="Intervento in reperibilità" />
+                                                                           <Text text="75" />
+                                                                           <Text text="150" />
+                                                                      </cells>
+                                                                 </ColumnListItem>
+                                                                 <ColumnListItem>
+                                                                      <cells>
+                                                                        <ObjectIdentifier text="P00012" />
+                                                                        <Input enabled="false" type="Number" value="3" />
+                                                                        <Text text="h" />
+                                                                        <Text text="Manutenzione impianti" />
+                                                                        <Text text="60" />
+                                                                        <Text text="180" />
+                                                                      </cells>
+                                                                 </ColumnListItem>
+                                                            </items>
+                                                       </Table>
+                                                    </content>
+                                                </Panel>
+                                            </VBox>
+                                        </IconTabFilter>
+                                    </items>
+                                </IconTabBar>
+                        </headerContainer>
+                    </ObjectHeader>
+                </Page>
+
+            </detailPages>
+            <masterPages>
+                <Page id="master" title="Elenco OdS" backgroundDesign="List" class="sapUiStdPage">
+                    <customHeader>
+                        <Toolbar>
+                            <Title text="Elenco OdS" level="H1" />
+                            <ToolbarSpacer />
+                            <VBox id="idVBox">
+                                <FacetFilter
+                                    id="idFacetFilter"
+                                    type="Simple"
+                                    showPersonalization="true"
+                                    liveSearch="false"
+                                    showReset="true">
+                                    <lists></lists>
+                                </FacetFilter>
+                            </VBox>
+                        </Toolbar>
+                    </customHeader>
+                    <List id="idList" items="{listModel>/}" growing="true" growingThreshold="50" includeItemInSelection="false">
+                        <CustomListItem
+                        highlight="{listModel>highlight}">
+                            <HBox justifyContent="SpaceBetween">
+                                <VBox width="100%" class="sapUiSmallMarginBegin sapUiSmallMarginEnd sapUiSmallMarginTopBottom" >
+                                    <Link text="{listModel>Info}" />
+                                        <HBox justifyContent="SpaceBetween">
+                                            <Label text="{listModel>Title}"/>
+                                            <Text text="{listModel>TitleText}"/>
+                                        </HBox>
+                                        <HBox justifyContent="SpaceBetween">
+                                            <Label text="{listModel>SubTitle}"/>
+                                            <Text text="{listModel>SubTitleText}"/>
+                                        </HBox>
+                                        <HBox justifyContent="SpaceBetween">
+                                            <Label text="{listModel>Description}"/>
+                                            <Text text="{listModel>DescriptionText}"/>
+                                        </HBox>
+                                       
+                                    </VBox>
+                                 </HBox>
+                        </CustomListItem>
+                    </List>
+                </Page>
+            </masterPages>
+        </SplitApp>
+    </Page>
+
+</mvc:View>

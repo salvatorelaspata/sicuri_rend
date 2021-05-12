@@ -1,0 +1,336 @@
+<core:FragmentDefinition
+		xmlns="sap.m"
+		xmlns:f="sap.ui.layout.form"
+		xmlns:core="sap.ui.core"
+          xmlns:viz="sap.viz.ui5.controls" xmlns:vk="sap.ui.vk"
+	xmlns:vbm="sap.ui.vbm">
+	<ResponsivePopover
+			id="detailsPopover"
+			title="{detailModel>/title}"
+			class="sapUiContentPadding"
+			placement="Rigth"
+               width="700px">
+		<beginButton>
+			<!-- <Button text="Edit" type="Emphasized" press="handleEditButton" ariaHasPopup="Dialog"/> -->
+		</beginButton>
+		<endButton>
+			<Button text="Chiudi"/>
+		</endButton>
+		<!-- <f:SimpleForm
+				editable="false"
+				layout="ResponsiveGridLayout"
+				singleContainerFullSize="false">
+			<Label text="Additional information" labelFor="moreInfoText"/>
+			<Text id="moreInfoText" text="{detailModel>/title}"/>
+			<Label text="From" labelFor="startDateText"/>
+			<Text id="startDateText" text="{path: 'detailModel>/start', formatter: '.formatDate'}"/>
+			<Label text="To" labelFor="endDateText"/>
+			<Text id="endDateText" text="{path: 'detailModel>/end', formatter: '.formatDate'}"/>
+		</f:SimpleForm> -->
+          <ObjectHeader
+               id="oh1"
+               responsive="true"
+               fullScreenOptimized="true"
+               binding="{detailModel>}"
+               icon="sap-icon://eam-work-order"
+               iconAlt="{Name}"
+               intro="Sostituzione Scheda"
+               title="OdS: 20001234"
+               titleActive="true"
+               titlePress="handleTitlePress"
+               numberUnit="{CurrencyCode}"
+               showMarkers="false"
+               markFlagged="false"
+               markFavorite="false"
+               backgroundDesign="Translucent"
+               class="sapUiResponsivePadding--header" >
+               
+               
+               <statuses>
+                    <ObjectStatus
+                         title="Stato"
+                         text="Assegnato"
+                         state="Success"/>
+               </statuses>
+               <ObjectAttribute
+                    title="Data"
+                    text="13/05/2021"/>
+               <ObjectAttribute
+                    title="Divisione"
+                    text="RM01"/>
+               <ObjectAttribute
+                    title="CdL Rest"
+                    text="DUMMY"/>
+               <ObjectAttribute
+                    title="Priorità"
+                    text="Urgente"/>
+               <headerContainer>
+                    <IconTabBar
+                         id="itb1"
+                         selectedKey="key3"
+                         upperCase="true"
+                         class="sapUiResponsiveContentPadding">
+                         <items>
+                              <IconTabFilter
+                                   icon="sap-icon://hint">
+                                   <VBox>
+                                        <Panel width="auto" class="" accessibleRole="Region">
+                                             <headerToolbar>
+                                                  <OverflowToolbar>
+                                                       <Title text="Impianto"/>
+                                                  </OverflowToolbar>
+                                             </headerToolbar>
+                                             <content>
+                                                  <HBox justifyContent="SpaceBetween">
+                                                       <Label text="Cod. Impianto"/>
+                                                       <Text text="30001234"/>
+                                                  </HBox>
+                                                  <HBox justifyContent="SpaceBetween">
+                                                       <Label text="Stato"/>
+                                                       <Text text="Fuori Esercizio"/>
+                                                  </HBox>
+                                                  <HBox justifyContent="SpaceBetween">
+                                                       <Label text="Descrizione"/>
+                                                       <Text text="Impianto Cube"/>
+                                                  </HBox>
+                                                  <HBox justifyContent="SpaceBetween">
+                                                       <Label text="Indirizzo"/>
+                                                       <Link text="Via Francesco Cangiullo, 24, 00142, Roma RM"/>
+                                                  </HBox>
+                                             </content>
+                                        </Panel>
+                                        <Panel width="auto" class="" accessibleRole="Region">
+                                             <headerToolbar>
+                                                  <OverflowToolbar>
+                                                       <Title text="Cliente"/>
+                                                  </OverflowToolbar>
+                                             </headerToolbar>
+                                             <content>
+                                                  <HBox justifyContent="SpaceBetween">
+                                                       <Label text="Cod. Cliente"/>
+                                                       <Text text="30001234"/>
+                                                  </HBox>
+                                                  <HBox justifyContent="SpaceBetween">
+                                                       <Label text=""/>
+                                                       <Text text="Cube Consultants"/>
+                                                  </HBox>
+                                                  <HBox justifyContent="SpaceBetween">
+                                                       <Label text="Contatto"/>
+                                                       <Text text="Alessandro Chessa"/>
+                                                  </HBox>
+                                                  <HBox justifyContent="SpaceBetween">
+                                                       <Label text="email"/>
+                                                       <Link text="alessandro.chessa@cubemail.it"/>
+                                                  </HBox>
+                                                  
+                                                  <HBox justifyContent="SpaceBetween">
+                                                       <Label text="Telefono"/>
+                                                       <Link text="+39 333 1234567"/>
+                                                  </HBox>
+                                             </content>
+                                        </Panel>
+                                        <Panel width="auto" class="" accessibleRole="Region">
+                                             <headerToolbar>
+                                                  <OverflowToolbar>
+                                                       <Title text="Mappa"/>
+                                                  </OverflowToolbar>
+                                             </headerToolbar>
+                                             <content>
+                                                  <vk:MapContainer autoAdjustHeight="false" heigth="300px">
+                                                       <vk:content>
+                                                            <vk:ContainerContent title="Analytic Map"
+                                                                 icon="sap-icon://geographic-bubble-chart">
+                                                                 <vk:content>
+                                                                      <vbm:AnalyticMap id="vbi2"/>
+                                                                 </vk:content>
+                                                            </vk:ContainerContent>
+                                                       </vk:content>
+                                                  </vk:MapContainer>
+                                             </content>
+                                        </Panel>
+                                   </VBox>
+                              </IconTabFilter>
+                              <IconTabFilter
+                                   icon="sap-icon://clinical-tast-tracker"
+                                   count="4">
+                                   <Table>
+                                        <headerToolbar>
+                                             <OverflowToolbar>
+                                                  <content>
+                                                       <Title text="Distinta base impianto" level="H2"/>
+                                                       <ToolbarSpacer />
+                                                       <core:Icon src="sap-icon://excel-attachment"/>
+                                                  </content>
+                                             </OverflowToolbar>
+                                        </headerToolbar>
+                                        <infoToolbar/>
+                                        <columns>
+                                             <Column>
+                                                  <Text text="Materiale" />
+                                             </Column>
+                                             <Column
+                                                  minScreenWidth="Tablet"
+                                                  demandPopin="true"
+                                                  hAlign="End">
+                                                  <Text text="Quantità" />
+                                             </Column>
+                                             <Column
+                                                  minScreenWidth="Tablet"
+                                                  demandPopin="true" width="12rem">
+                                                  <Text text="Descrizione" />
+                                             </Column>
+                                        </columns>
+                                        <items>
+                                             <ColumnListItem>
+                                                  <cells>
+                                                       <ObjectIdentifier
+                                                            title="2000123"/>
+                                                       <Text
+                                                            text="1" />
+                                                       <Text
+                                                            text="Scheda" />
+                                                  </cells>
+                                             </ColumnListItem>
+                                             
+                                             <ColumnListItem>
+                                                  <cells>
+                                                       <ObjectIdentifier
+                                                            title="Sensore volumetrici"/>
+                                                       <Text
+                                                            text="4" />
+                                                       <Text
+                                                            text="Scheda" />
+                                                  </cells>
+                                             </ColumnListItem>
+                                             
+                                             <ColumnListItem>
+                                                  <cells>
+                                                       <ObjectIdentifier
+                                                            title="4000532"/>
+                                                       <Text
+                                                            text="3" />
+                                                       <Text
+                                                            text="Sensore porta" />
+                                                  </cells>
+                                             </ColumnListItem>
+                                             
+                                             <ColumnListItem>
+                                                  <cells>
+                                                       <ObjectIdentifier
+                                                            title="4000532"/>
+                                                       <Text
+                                                            text="1" />
+                                                       <Text
+                                                            text="Sirena" />
+                                                  </cells>
+                                             </ColumnListItem>
+                                        </items>
+                                   </Table>
+                              </IconTabFilter>
+                              <IconTabFilter
+                                   icon="sap-icon://history"
+                                   count="3">
+                                   <Table>
+                                        <headerToolbar>
+                                             <OverflowToolbar>
+                                                  <content>
+                                                       <Title text="Storico interventi" level="H2"/>
+                                                       <ToolbarSpacer />
+                                                       <core:Icon src="sap-icon://excel-attachment"/>
+                                                  </content>
+                                             </OverflowToolbar>
+                                        </headerToolbar>
+                                        <infoToolbar/>
+                                        <columns>
+                                             <Column>
+                                                  <Text text="OdS" />
+                                             </Column>
+                                             <Column
+                                                  minScreenWidth="Desktop"
+                                                  demandPopin="true" width="3.4rem">
+                                                  <Text text="Tipo" />
+                                             </Column>
+                                             <Column
+                                                  minScreenWidth="Desktop"
+                                                  demandPopin="true" width="8rem">
+                                                  <Text text="Descrizione" />
+                                             </Column>
+                                             <Column
+                                                  minScreenWidth="Tablet"
+                                                  demandPopin="true">
+                                                  <Text text="Data" />
+                                             </Column>
+                                             <Column
+                                                  minScreenWidth="Tablet"
+                                                  demandPopin="true">
+                                                  <Text text="CdL" />
+                                             </Column>
+                                             <Column
+                                                  minScreenWidth="Tablet"
+                                                  demandPopin="true">
+                                                  <Text text="CID" />
+                                             </Column>
+                                             <Column
+                                                  minScreenWidth="Tablet"
+                                                  demandPopin="true"
+                                                  width="4rem">
+                                                  <Text text="Stato" />
+                                             </Column>
+                                             
+                                             <Column
+                                                  minScreenWidth="Tablet"
+                                                  demandPopin="true"
+                                                  width="2.4rem">
+                                                  <Text text="Rif." />
+                                             </Column>
+                                        </columns>
+                                        <items>
+                                             <ColumnListItem>
+                                                  <cells>
+                                                       <ObjectIdentifier text="20000234" />
+                                                       <Text text="ZINS" />
+                                                       <Text text="Installazione nuovo Impianto" />
+                                                       <Text text="01/04/2010" />
+                                                       <Text text="VAN001" />
+                                                       <Text text="Mario Rossi" />
+                                                       <Text text="Chiuso" />
+                                                       <core:Icon src="sap-icon://show"/>
+                                                  </cells>
+                                             </ColumnListItem>
+                                             <ColumnListItem>
+                                                  <cells>
+                                                       <ObjectIdentifier text="20000345"/>
+                                                       <Text text="ZGUA" />
+                                                       <Text text="Sostituzione Sensore" />
+                                                       <Text text="07/02/2014" />
+                                                       <Text text="VAN002" />
+                                                       <Text text="Carlo Verdi" />
+                                                       <Text text="Chiuso" />
+                                                       <core:Icon src="sap-icon://show"/>
+                                                  </cells>
+                                             </ColumnListItem>
+                                             <ColumnListItem>
+                                                  <cells>
+                                                       <ObjectIdentifier text="20001012" />
+                                                       <Text text="ZVER" />
+                                                       <Text text="Verifica Batterie" />
+                                                       <Text text="01/04/2010" />
+                                                       <Text text="VAN001" />
+                                                       <Text text="Mario Rossi" />
+                                                       <Text text="Chiuso" />
+                                                       <core:Icon src="sap-icon://show"/>
+                                                  </cells>
+                                             </ColumnListItem>
+                                        </items>
+                                   </Table>
+                              </IconTabFilter>
+                              <!-- <IconTabFilter
+                                   icon="sap-icon://group">
+                                   <Text text="People content goes here ..." />
+                              </IconTabFilter> -->
+                         </items>
+                    </IconTabBar>
+               </headerContainer>
+          </ObjectHeader>
+	</ResponsivePopover>
+</core:FragmentDefinition>
